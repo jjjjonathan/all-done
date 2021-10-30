@@ -2,9 +2,11 @@ import styles from './App.module.css';
 
 const App = () => {
   return (
-    <div className={`${styles.container} container mx-auto`}>
-      <header className="text-center">
-        <h1 id="app-title">All Done</h1>
+    <div className={`${styles.container} container mx-auto pt-4`}>
+      <header className="text-center p-4">
+        <h1 id="app-title" className="text-6xl">
+          All Done
+        </h1>
       </header>
     </div>
   );
