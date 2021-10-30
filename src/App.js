@@ -1,4 +1,5 @@
 import styles from './App.module.css';
+import Todo from './components/Todo';
 
 const App = () => {
   return (
@@ -8,6 +9,9 @@ const App = () => {
           All Done
         </h1>
       </header>
+      <main>
+        <Todo />
+      </main>
     </div>
   );
 };
