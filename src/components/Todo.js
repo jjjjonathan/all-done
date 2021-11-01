@@ -22,6 +22,9 @@ const Todo = () => {
           onChange={(changedValue) => setText(changedValue)}
         />
       </div>
+      <div>
+        <i className="bi bi-grip-vertical"></i>
+      </div>
     </div>
   );
 };
