@@ -4,6 +4,7 @@ import 'react-edit-text/dist/index.css';
 
 const Todo = () => {
   const [checked, setChecked] = useState(false);
+  const [text, setText] = useState('Walk the dog');
 
   return (
     <div className="text-2xl flex items-center">
@@ -17,7 +18,11 @@ const Todo = () => {
         ></i>
       </div>
       <div className="w-full">
-        <EditText id="todo-text" defaultValue="Walk the dog" />
+        <EditText
+          id="todo-text"
+          value={text}
+          onChange={(changedValue) => setText(changedValue)}
+        />
       </div>
     </div>
   );
