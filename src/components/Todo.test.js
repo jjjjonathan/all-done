@@ -16,9 +16,4 @@ describe('Todo', () => {
       wrapper.find('#todo-checkbox').hasClass('bi-check-square-fill'),
     ).toBe(true);
   });
-
-  test('text becomes editable when clicked', () => {
-    wrapper.find('#todo-text').simulate('click');
-    expect(wrapper.find('#todo-text').is('input')).toBe(true);
-  });
 });
