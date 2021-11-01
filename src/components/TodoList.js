@@ -11,9 +11,9 @@ const TodoList = () => {
             {...provided.droppableProps}
             ref={provided.innerRef}
           >
-            <Todo />
-            <Todo />
-            <Todo />
+            <Todo id="first" index={0} />
+            <Todo id="second" index={1} />
+            <Todo id="third" index={2} />
           </div>
         )}
       </Droppable>

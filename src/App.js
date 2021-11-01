@@ -1,5 +1,5 @@
 import styles from './App.module.css';
-import Todo from './components/Todo';
+import TodoList from './components/TodoList';
 
 const App = () => {
   return (
@@ -10,9 +10,7 @@ const App = () => {
         </h1>
       </header>
       <main className="p-4">
-        <Todo />
-        <Todo />
-        <Todo />
+        <TodoList />
       </main>
     </div>
   );
