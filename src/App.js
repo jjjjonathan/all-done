@@ -9,7 +9,7 @@ const App = () => {
           All Done
         </h1>
       </header>
-      <main>
+      <main className="p-4">
         <Todo />
       </main>
     </div>
