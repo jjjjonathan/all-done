@@ -11,6 +11,8 @@ const App = () => {
       </header>
       <main className="p-4">
         <Todo />
+        <Todo />
+        <Todo />
       </main>
     </div>
   );
