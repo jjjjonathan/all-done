@@ -8,12 +8,10 @@ const Todo = () => {
 
   return (
     <div className="text-2xl flex items-center">
-      <div>
+      <div className="pr-3">
         <i
           id="todo-checkbox"
-          className={`bi ${
-            checked ? 'bi-check-square-fill' : 'bi-square'
-          } pr-3`}
+          className={`bi ${checked ? 'bi-check-square-fill' : 'bi-square'}`}
           onClick={() => setChecked(!checked)}
         ></i>
       </div>
