@@ -1,4 +1,4 @@
-import reducer, { toggleChecked, editText } from './todosSlice';
+import reducer, { toggleChecked, editText, add } from './todosSlice';
 
 describe('Todos slice of state', () => {
   test('should return the initial state', () => {
@@ -65,6 +65,15 @@ describe('Todos slice of state', () => {
         text: 'Call Deborah',
         checked: false,
         id: '84jd2n',
+      },
+    ]);
+  });
+
+  test('should handle adding new todo', () => {
+    expect(reducer([], add('Go to the gym'))).toMatchObject([
+      {
+        text: 'Go to the gym',
+        checked: false,
       },
     ]);
   });

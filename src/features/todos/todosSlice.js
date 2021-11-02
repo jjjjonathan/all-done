@@ -1,4 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
+import { nanoid } from 'nanoid';
 
 export const todosSlice = createSlice({
   name: 'todos',
@@ -41,9 +42,17 @@ export const todosSlice = createSlice({
         return todo;
       });
     },
+    add: (state, action) => {
+      // Payload is text of new todo
+      state.push({
+        text: action.payload,
+        checked: false,
+        id: nanoid(),
+      });
+    },
   },
 });
 
-export const { toggleChecked, reorder, editText } = todosSlice.actions;
+export const { toggleChecked, reorder, editText, add } = todosSlice.actions;
 
 export default todosSlice.reducer;
