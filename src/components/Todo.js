@@ -1,5 +1,5 @@
 import { useDispatch } from 'react-redux';
-import { toggleChecked } from '../features/todos/todosSlice';
+import { toggleChecked, editText } from '../features/todos/todosSlice';
 import { Draggable } from 'react-beautiful-dnd';
 import { EditText } from 'react-edit-text';
 import 'react-edit-text/dist/index.css';
@@ -26,7 +26,9 @@ const Todo = ({ id, index, text, checked }) => {
             <EditText
               id="todo-text"
               value={text}
-              // onChange={(changedValue) => setText(changedValue)}
+              onChange={(changedValue) =>
+                dispatch(editText({ id, text: changedValue }))
+              }
             />
           </div>
           <div>
