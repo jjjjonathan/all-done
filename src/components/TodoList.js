@@ -21,8 +21,19 @@ const TodoList = () => {
     },
   ]);
 
+  const handleDragEnd = ({ source, destination }) => {
+    if (!destination) return;
+
+    const nextState = [...todos];
+
+    const [draggedTodo] = nextState.splice(source.index, 1);
+    nextState.splice(destination.index, 0, draggedTodo);
+
+    setTodos(nextState);
+  };
+
   return (
-    <DragDropContext>
+    <DragDropContext onDragEnd={handleDragEnd}>
       <Droppable droppableId="todos">
         {(provided) => (
           <div
@@ -39,6 +50,7 @@ const TodoList = () => {
                 checked={checked}
               />
             ))}
+            {provided.placeholder}
           </div>
         )}
       </Droppable>

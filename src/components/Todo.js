@@ -10,7 +10,6 @@ const Todo = ({ id, index, text, checked }) => {
           className="text-2xl flex items-center"
           ref={provided.innerRef}
           {...provided.draggableProps}
-          {...provided.dragHandleProps}
         >
           <div className="pr-3">
             <i
@@ -27,7 +26,10 @@ const Todo = ({ id, index, text, checked }) => {
             />
           </div>
           <div>
-            <i className="bi bi-grip-vertical"></i>
+            <i
+              className="bi bi-grip-vertical"
+              {...provided.dragHandleProps}
+            ></i>
           </div>
         </div>
       )}
