@@ -1,12 +1,8 @@
-import { useState } from 'react';
 import { Draggable } from 'react-beautiful-dnd';
 import { EditText } from 'react-edit-text';
 import 'react-edit-text/dist/index.css';
 
-const Todo = ({ id, index }) => {
-  const [checked, setChecked] = useState(false);
-  const [text, setText] = useState('Walk the dog');
-
+const Todo = ({ id, index, text, checked }) => {
   return (
     <Draggable key={id} draggableId={id} index={index}>
       {(provided) => (
@@ -20,14 +16,14 @@ const Todo = ({ id, index }) => {
             <i
               id="todo-checkbox"
               className={`bi ${checked ? 'bi-check-square-fill' : 'bi-square'}`}
-              onClick={() => setChecked(!checked)}
+              // onClick={() => setChecked(!checked)}
             ></i>
           </div>
           <div className="w-full">
             <EditText
               id="todo-text"
               value={text}
-              onChange={(changedValue) => setText(changedValue)}
+              // onChange={(changedValue) => setText(changedValue)}
             />
           </div>
           <div>

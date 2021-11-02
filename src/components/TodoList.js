@@ -1,7 +1,26 @@
+import { useState } from 'react';
 import { DragDropContext, Droppable } from 'react-beautiful-dnd';
 import Todo from './Todo';
 
 const TodoList = () => {
+  const [todos, setTodos] = useState([
+    {
+      text: 'Walk the dog',
+      checked: false,
+      id: '7f2j48',
+    },
+    {
+      text: 'Wash dishes',
+      checked: false,
+      id: '482jfs',
+    },
+    {
+      text: 'Call Debra',
+      checked: false,
+      id: '84jd2n',
+    },
+  ]);
+
   return (
     <DragDropContext>
       <Droppable droppableId="todos">
@@ -11,9 +30,15 @@ const TodoList = () => {
             {...provided.droppableProps}
             ref={provided.innerRef}
           >
-            <Todo id="first" index={0} />
-            <Todo id="second" index={1} />
-            <Todo id="third" index={2} />
+            {todos.map(({ id, text, checked }, index) => (
+              <Todo
+                key={id}
+                id={id}
+                index={index}
+                text={text}
+                checked={checked}
+              />
+            ))}
           </div>
         )}
       </Droppable>
