@@ -1,25 +1,9 @@
-import { useState } from 'react';
+import { useSelector } from 'react-redux';
 import { DragDropContext, Droppable } from 'react-beautiful-dnd';
 import Todo from './Todo';
 
 const TodoList = () => {
-  const [todos, setTodos] = useState([
-    {
-      text: 'Walk the dog',
-      checked: false,
-      id: '7f2j48',
-    },
-    {
-      text: 'Wash dishes',
-      checked: false,
-      id: '482jfs',
-    },
-    {
-      text: 'Call Debra',
-      checked: false,
-      id: '84jd2n',
-    },
-  ]);
+  const todos = useSelector((state) => state.todos);
 
   const handleDragEnd = ({ source, destination }) => {
     if (!destination) return;
@@ -29,7 +13,7 @@ const TodoList = () => {
     const [draggedTodo] = nextState.splice(source.index, 1);
     nextState.splice(destination.index, 0, draggedTodo);
 
-    setTodos(nextState);
+    // setTodos(nextState);
   };
 
   return (
