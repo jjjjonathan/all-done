@@ -33,9 +33,17 @@ export const todosSlice = createSlice({
       const [draggedTodo] = state.splice(action.payload.sourceIndex, 1);
       state.splice(action.payload.destinationIndex, 0, draggedTodo);
     },
+    editText: (state, action) => {
+      return state.map((todo) => {
+        if (todo.id === action.payload.id) {
+          return { ...todo, text: action.payload.text };
+        }
+        return todo;
+      });
+    },
   },
 });
 
-export const { toggleChecked, reorder } = todosSlice.actions;
+export const { toggleChecked, reorder, editText } = todosSlice.actions;
 
 export default todosSlice.reducer;
