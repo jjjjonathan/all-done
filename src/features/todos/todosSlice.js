@@ -22,7 +22,7 @@ export const todosSlice = createSlice({
   reducers: {
     toggleChecked: (state, action) => {
       // Payload is id of todo to toggle
-      state = state.map((todo) => {
+      return state.map((todo) => {
         if (todo.id === action.payload) {
           return { ...todo, checked: !todo.checked };
         }
