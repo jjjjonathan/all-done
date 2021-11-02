@@ -1,19 +1,21 @@
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
+import { reorder } from '../features/todos/todosSlice';
 import { DragDropContext, Droppable } from 'react-beautiful-dnd';
 import Todo from './Todo';
 
 const TodoList = () => {
   const todos = useSelector((state) => state.todos);
+  const dispatch = useDispatch();
 
   const handleDragEnd = ({ source, destination }) => {
     if (!destination) return;
 
-    const nextState = [...todos];
-
-    const [draggedTodo] = nextState.splice(source.index, 1);
-    nextState.splice(destination.index, 0, draggedTodo);
-
-    // setTodos(nextState);
+    dispatch(
+      reorder({
+        sourceIndex: source.index,
+        destinationIndex: destination.index,
+      }),
+    );
   };
 
   return (
