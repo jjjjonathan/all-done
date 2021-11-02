@@ -29,6 +29,10 @@ export const todosSlice = createSlice({
         return todo;
       });
     },
+    reorder: (state, action) => {
+      const [draggedTodo] = state.splice(action.payload.sourceIndex, 1);
+      state.splice(action.payload.destinationIndex, 0, draggedTodo);
+    },
   },
 });
 
