@@ -1,8 +1,12 @@
+import { useDispatch } from 'react-redux';
+import { toggleChecked } from '../features/todos/todosSlice';
 import { Draggable } from 'react-beautiful-dnd';
 import { EditText } from 'react-edit-text';
 import 'react-edit-text/dist/index.css';
 
 const Todo = ({ id, index, text, checked }) => {
+  const dispatch = useDispatch();
+
   return (
     <Draggable key={id} draggableId={id} index={index}>
       {(provided) => (
@@ -15,7 +19,7 @@ const Todo = ({ id, index, text, checked }) => {
             <i
               id="todo-checkbox"
               className={`bi ${checked ? 'bi-check-square-fill' : 'bi-square'}`}
-              // onClick={() => setChecked(!checked)}
+              onClick={() => dispatch(toggleChecked(id))}
             ></i>
           </div>
           <div className="w-full">
