@@ -17,14 +17,12 @@ const Todo = ({ id, index, text, checked }) => {
         >
           <div className="pr-3">
             <i
-              id="todo-checkbox"
               className={`bi ${checked ? 'bi-check-square-fill' : 'bi-square'}`}
               onClick={() => dispatch(toggleChecked(id))}
             ></i>
           </div>
           <div className="w-full">
             <EditText
-              id="todo-text"
               value={text}
               onChange={(changedValue) =>
                 dispatch(editText({ id, text: changedValue }))
