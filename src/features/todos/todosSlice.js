@@ -36,6 +36,6 @@ export const todosSlice = createSlice({
   },
 });
 
-export const { toggleChecked } = todosSlice.actions;
+export const { toggleChecked, reorder } = todosSlice.actions;
 
 export default todosSlice.reducer;
