@@ -3,6 +3,7 @@ import { toggleChecked, editText } from '../features/todos/todosSlice';
 import { Draggable } from 'react-beautiful-dnd';
 import { EditText } from 'react-edit-text';
 import 'react-edit-text/dist/index.css';
+import styles from './Todo.module.css';
 
 const Todo = ({ id, index, text, checked }) => {
   const dispatch = useDispatch();
@@ -23,6 +24,7 @@ const Todo = ({ id, index, text, checked }) => {
           </div>
           <div className="w-full">
             <EditText
+              className={styles.todoText}
               value={text}
               onChange={(changedValue) =>
                 dispatch(editText({ id, text: changedValue }))
