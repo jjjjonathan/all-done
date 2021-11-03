@@ -3,6 +3,7 @@ import { useDispatch } from 'react-redux';
 import { add } from '../features/todos/todosSlice';
 import { EditText } from 'react-edit-text';
 import 'react-edit-text/dist/index.css';
+import styles from './NewTodo.module.css';
 
 const NewTodo = () => {
   const dispatch = useDispatch();
@@ -15,6 +16,7 @@ const NewTodo = () => {
       </div>
       <div className="w-full">
         <EditText
+          className={styles.newTodoText}
           placeholder="New Todo"
           value={text}
           onChange={(changedValue) => setText(changedValue)}
