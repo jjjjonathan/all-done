@@ -77,7 +77,7 @@ describe('Todos slice of state', () => {
   });
 
   test('should handle removal of todo', () => {
-    expect(reducer(initialState, remove('482jfs'))).toEqual([
+    expect(reducer(initialState, remove(1))).toEqual([
       {
         text: 'Walk the dog',
         checked: false,
