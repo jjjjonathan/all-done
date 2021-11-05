@@ -51,9 +51,8 @@ export const todosSlice = createSlice({
       });
     },
     remove: (state, action) => {
-      // Payload is id of todo to remove
-      const index = state.findIndex((e) => e.id === action.payload);
-      state.splice(index, 1);
+      // Payload is index of todo to remove
+      state.splice(action.payload, 1);
     },
   },
 });

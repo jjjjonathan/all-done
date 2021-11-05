@@ -1,5 +1,5 @@
 import { useSelector, useDispatch } from 'react-redux';
-import { reorder } from '../reducers/todosSlice';
+import { remove, reorder } from '../reducers/todosSlice';
 import { DragDropContext, Droppable } from 'react-beautiful-dnd';
 import Todo from './Todo';
 import NewTodo from './NewTodo';
@@ -12,12 +12,16 @@ const TodoList = () => {
   const handleDragEnd = ({ source, destination }) => {
     if (!destination) return;
 
-    dispatch(
-      reorder({
-        sourceIndex: source.index,
-        destinationIndex: destination.index,
-      }),
-    );
+    if (destination.droppableId === 'trash') {
+      dispatch(remove(source.index));
+    } else {
+      dispatch(
+        reorder({
+          sourceIndex: source.index,
+          destinationIndex: destination.index,
+        }),
+      );
+    }
   };
 
   return (
