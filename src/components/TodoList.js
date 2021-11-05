@@ -1,5 +1,5 @@
 import { useSelector, useDispatch } from 'react-redux';
-import { reorder } from '../features/todos/todosSlice';
+import { reorder } from '../reducers/todosSlice';
 import { DragDropContext, Droppable } from 'react-beautiful-dnd';
 import Todo from './Todo';
 import NewTodo from './NewTodo';

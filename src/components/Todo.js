@@ -1,5 +1,5 @@
 import { useDispatch } from 'react-redux';
-import { toggleChecked, editText } from '../features/todos/todosSlice';
+import { toggleChecked, editText } from '../reducers/todosSlice';
 import { Draggable } from 'react-beautiful-dnd';
 import { EditText } from 'react-edit-text';
 import 'react-edit-text/dist/index.css';

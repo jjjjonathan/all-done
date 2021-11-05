@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { add } from '../features/todos/todosSlice';
+import { add } from '../reducers/todosSlice';
 import { EditText } from 'react-edit-text';
 import 'react-edit-text/dist/index.css';
 import styles from './NewTodo.module.css';
