@@ -6,7 +6,7 @@ const Trash = () => {
       {(provided, snapshot) => (
         <div
           ref={provided.innerRef}
-          className={`text-center  mt-10 ${
+          className={`text-center mt-10 p-2 ${
             snapshot.isDraggingOver ? 'bg-red-200' : 'bg-gray-200'
           }`}
           {...provided.droppableProps}
