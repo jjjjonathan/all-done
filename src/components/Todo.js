@@ -12,13 +12,15 @@ const Todo = ({ id, index, text, checked }) => {
     <Draggable key={id} draggableId={id} index={index}>
       {(provided) => (
         <div
-          className="text-2xl flex items-center"
+          className="flex items-center"
           ref={provided.innerRef}
           {...provided.draggableProps}
         >
           <div className="pr-3">
             <i
-              className={`bi ${checked ? 'bi-check-square-fill' : 'bi-square'}`}
+              className={`bi text-2xl ${
+                checked ? 'bi-check-square-fill' : 'bi-square'
+              }`}
               onClick={() => dispatch(toggleChecked(id))}
             ></i>
           </div>

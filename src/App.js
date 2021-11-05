@@ -4,8 +4,8 @@ import TodoList from './components/TodoList';
 const App = () => {
   return (
     <div className={`${styles.container} container mx-auto pt-4`}>
-      <header className="text-center p-4">
-        <h1 id="app-title" className="text-6xl">
+      <header className="text-center mt-8 mb-6">
+        <h1 id="app-title" className="text-5xl">
           All Done
         </h1>
       </header>

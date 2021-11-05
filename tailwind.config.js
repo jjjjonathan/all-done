@@ -3,8 +3,8 @@ module.exports = {
   darkMode: false, // or 'media' or 'class'
   theme: {
     fontFamily: {
-      display: ['Dongle'],
-      body: ['Dongle'],
+      display: ['Quicksand'],
+      body: ['Quicksand'],
     },
   },
   variants: {

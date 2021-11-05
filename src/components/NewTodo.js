@@ -10,9 +10,9 @@ const NewTodo = () => {
   const [text, setText] = useState('');
 
   return (
-    <div className="text-2xl flex items-center text-gray-300">
+    <div className="flex items-center text-gray-300">
       <div className="pr-3">
-        <i className="bi bi-plus-circle-fill"></i>
+        <i className="bi bi-plus-circle-fill text-2xl"></i>
       </div>
       <div className="w-full">
         <EditText
