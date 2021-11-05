@@ -1,4 +1,5 @@
 import { Droppable } from 'react-beautiful-dnd';
+import styles from './Trash.module.css';
 
 const Trash = () => {
   return (
@@ -6,10 +7,10 @@ const Trash = () => {
       {(provided, snapshot) => (
         <div
           ref={provided.innerRef}
-          style={{ backgroundColor: snapshot.isDraggingOver ? 'blue' : 'grey' }}
+          className={`text-center ${snapshot.isDraggingOver && 'bg-red-100'}`}
           {...provided.droppableProps}
         >
-          TRASHCAN
+          <i className={`bi bi-trash-fill text-red-500 ${styles.trashcan}`}></i>
           {provided.placeholder}
         </div>
       )}
