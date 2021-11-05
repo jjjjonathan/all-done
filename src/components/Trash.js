@@ -1,5 +1,4 @@
 import { Droppable } from 'react-beautiful-dnd';
-import styles from './Trash.module.css';
 
 const Trash = () => {
   return (
@@ -14,7 +13,7 @@ const Trash = () => {
         >
           <i
             className={
-              !snapshot.isDraggingOver && 'bi bi-trash-fill text-gray-500'
+              snapshot.isDraggingOver ? '' : 'bi bi-trash-fill text-gray-500'
             }
           ></i>
           {provided.placeholder}
