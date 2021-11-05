@@ -7,17 +7,17 @@ export const todosSlice = createSlice({
     {
       text: 'Walk the dog',
       checked: false,
-      id: '7f2j48',
+      id: nanoid(),
     },
     {
       text: 'Wash dishes',
       checked: false,
-      id: '482jfs',
+      id: nanoid(),
     },
     {
-      text: 'Call Debra',
+      text: 'Call mom',
       checked: false,
-      id: '84jd2n',
+      id: nanoid(),
     },
   ],
   reducers: {
@@ -50,9 +50,15 @@ export const todosSlice = createSlice({
         id: nanoid(),
       });
     },
+    remove: (state, action) => {
+      // Payload is id of todo to remove
+      const index = state.findIndex((e) => e.id === action.payload);
+      state.splice(index, 1);
+    },
   },
 });
 
-export const { toggleChecked, reorder, editText, add } = todosSlice.actions;
+export const { toggleChecked, reorder, editText, add, remove } =
+  todosSlice.actions;
 
 export default todosSlice.reducer;

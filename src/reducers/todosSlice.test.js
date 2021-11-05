@@ -1,4 +1,4 @@
-import reducer, { toggleChecked, editText, add } from './todosSlice';
+import reducer, { toggleChecked, editText, add, remove } from './todosSlice';
 
 const initialState = [
   {
@@ -72,6 +72,21 @@ describe('Todos slice of state', () => {
       {
         text: 'Go to the gym',
         checked: false,
+      },
+    ]);
+  });
+
+  test('should handle removal of todo', () => {
+    expect(reducer(initialState, remove('482jfs'))).toEqual([
+      {
+        text: 'Walk the dog',
+        checked: false,
+        id: '7f2j48',
+      },
+      {
+        text: 'Call Debra',
+        checked: false,
+        id: '84jd2n',
       },
     ]);
   });
