@@ -3,8 +3,8 @@ module.exports = {
   darkMode: false, // or 'media' or 'class'
   theme: {
     fontFamily: {
-      display: ['Zen Kurenaido'],
-      body: ['Zen Kurenaido'],
+      display: ['Dongle'],
+      body: ['Dongle'],
     },
   },
   variants: {
