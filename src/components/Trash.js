@@ -7,10 +7,16 @@ const Trash = () => {
       {(provided, snapshot) => (
         <div
           ref={provided.innerRef}
-          className={`text-center ${snapshot.isDraggingOver && 'bg-red-100'}`}
+          className={`text-center  mt-10 ${
+            snapshot.isDraggingOver ? 'bg-red-200' : 'bg-gray-200'
+          }`}
           {...provided.droppableProps}
         >
-          <i className={`bi bi-trash-fill text-red-500 ${styles.trashcan}`}></i>
+          <i
+            className={
+              !snapshot.isDraggingOver && 'bi bi-trash-fill text-gray-500'
+            }
+          ></i>
           {provided.placeholder}
         </div>
       )}
